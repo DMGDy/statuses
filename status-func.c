@@ -22,7 +22,7 @@ displaytime(void)
 	time(&current_time);
 
 	time_info = localtime(&current_time);
-	strftime(time_string,sizeof(char) * 25,"%d/%m/%Y %T", time_info);
+	strftime(time_string,sizeof(char) * 25,"%d/%m/%y %T", time_info);
 	strcpy(t,time_string);
 
 
@@ -32,7 +32,7 @@ displaytime(void)
 int 
 display_battery_int(void)
 {
-	char info[5];
+	char info[4];
 	FILE* fp = fopen(
 			"/sys/class/power_supply/BAT1/capacity","r");
 
